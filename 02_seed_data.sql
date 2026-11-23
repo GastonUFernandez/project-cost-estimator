@@ -25,4 +25,19 @@ VALUES
         TRUE
     );
     
+-- 3. Categorías de trabajo
+INSERT INTO categories (name, description, active)
+VALUES
+    ('Backend', 'Desarrollo de APIs, servicios de negocio y bases de datos', TRUE),
+    ('QA', 'Pruebas funcionales, automatización y aseguramiento de calidad', TRUE),
+    ('PM', 'Coordinación, planificación y seguimiento de entregas', TRUE);
+
+-- 4. Puestos / Roles (costo interno vs tarifa por hora al cliente)
+INSERT INTO roles (category_id, name, hourly_cost, hourly_rate, active)
+VALUES
+    ((SELECT id FROM categories WHERE name = 'Backend'), 'Backend Developer Jr', 18.00, 35.00, TRUE),
+    ((SELECT id FROM categories WHERE name = 'Backend'), 'Backend Developer Ssr', 28.00, 52.00, TRUE),
+    ((SELECT id FROM categories WHERE name = 'QA'), 'QA Engineer Manual & Automation', 16.00, 32.00, TRUE),
+    ((SELECT id FROM categories WHERE name = 'PM'), 'Project Manager', 25.00, 48.00, TRUE);
+    
     
