@@ -1,0 +1,13 @@
+*.class
+*.log
+*.jar
+*.war
+target/
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+nbproject/private/
+build/
+.vscode/
+.idea/
+*.iml
+.DS_Store
