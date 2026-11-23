@@ -1,5 +1,22 @@
 USE project_estimator_db;
 
+SET FOREIGN_KEY_CHECKS = 0;
+
+TRUNCATE TABLE estimate_items;
+TRUNCATE TABLE project_estimates;
+TRUNCATE TABLE projects;
+TRUNCATE TABLE employees;
+TRUNCATE TABLE roles;
+TRUNCATE TABLE categories;
+TRUNCATE TABLE clients;
+TRUNCATE TABLE client_categories;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+
+USE project_estimator_db;
+
 -- 1. Categorías de clientes
 INSERT INTO client_categories (name, description, default_margin_percentage, discount_percentage, active)
 VALUES
